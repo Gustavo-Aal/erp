@@ -1,0 +1,19 @@
+<div class="products_page">
+
+  <div class="header">
+    <h1>Produtos</h1>
+
+    <button class="button1" onclick="location.href ='<%= new_product_path %>'">
+            <strong>Novo produto</strong>
+    </button>
+  </div>
+
+  <div class="products">
+    <% @products.each do |product| %>
+
+      <%= render product %>
+    
+    <% end %>
+  </div>  
+
+</div>

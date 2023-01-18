@@ -1,0 +1,14 @@
+<a href="products/<%= product.id %>" class="product" id="<%= dom_id product %>">
+  
+  <div class="image">
+      <img src="/image.png" alt="">
+  </div>
+  <div class="namePrice">
+      <h3><%= product.name %></h3>
+  </div>
+  <p id="value"><%= number_to_currency(product.value, unit: "R$ ", delimiter: ".", separator: ",")%></p>
+  <p>Quantidade: <%= product.quantity %></p>
+  <p><%= product.description%></p>
+  <p>Pedidos: <%= product.orders.length %></p>
+  <p>Unidades vendidas: <%= product.orders.sum(:quantity) %></p>
+</a>

@@ -1,0 +1,18 @@
+<div class="orders_index">
+
+<div class="header">
+  <h1>Vendas</h1>
+
+<button class="button1" onclick="location.href ='<%= new_order_path %>'">
+        <strong>Nova venda</strong>
+</button>
+<div>
+
+  <% @orders.each do |order| %>
+
+    <a href="orders/<%= order.id %>" id="<%= dom_id order %>">
+      <%= render order %>
+    </a>
+  <% end %>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="indicators">
+
+<h1>Indicadores</h1>
+
+<div class="row">
+    <div class="vendas col-sm-5">
+        <h2>Vendas</h2>
+        <h2><%= number_to_currency(Sale.all.sum(:total_value), unit: "R$ ", delimiter: ".", separator: ",")%></h2>
+    </div>
+    <div class="despesas col-sm-5">
+        <h2>Despesas</h2>
+        <h2>R$ 0,00</h2>
+    </div>
+
+</div>
+</div>

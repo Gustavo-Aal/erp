@@ -1,0 +1,23 @@
+<!--a href="orders/<%= order.id %>" id="<%= dom_id order %>"-->
+<div class="order row">
+  <div class="pedido">
+  <h3># <%= order.id %></h3>
+  </div>
+  <div class="info">
+  <p>
+    <strong>Produto:</strong>
+    <%= order.product.name %>
+  </p>
+
+  <p>
+    <strong>Quantidade: </strong>
+    <%= order.quantity %>
+  </p>
+
+  <p>
+    <strong> Total: </strong>
+    <%= number_to_currency(order.product.value * order.quantity, unit: "R$ ", delimiter: ".", separator: ",")%>
+  </p>
+  </div>
+</div>
+<!--/a-->
