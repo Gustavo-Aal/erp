@@ -1,24 +1,17 @@
-# README
+# Sobre
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Essa aplicação (ainda sem nome) tem o objetivo de ser um sistema completo para gestão de vendas e estoque, integrando também controle de receitas e despesas, estatísticas de vendas entre colaboradores, entre outros.
 
-Things you may want to cover:
 
-* Ruby version
+# Sistema
 
-* System dependencies
+## Geral
+* Ruby 3.1.2
+* Rails 7.0.4
+* Banco de dados: PostgreSQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Gems
+* Faker: para alimentar banco de dados
+* Cocoon: para formulários
+* HAML: para views
+* HTML2HALM: para converter ERB em HAML
