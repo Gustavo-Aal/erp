@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    2.times {@order.items.build}
   end
 
   # GET /orders/1/edit
@@ -65,6 +66,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:product_id, :quantity)
+      params.require(:order).permit(:total_value, items_attributes: [:product_id, :quantity])
     end
 end

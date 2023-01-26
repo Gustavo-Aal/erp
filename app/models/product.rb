@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
-    has_many :order_products
-    has_many :orders, through: :order_products
+    has_many :items
+    has_many :orders, through: :items
+
+    validates :name, uniqueness: true
 end

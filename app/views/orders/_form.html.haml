@@ -1,0 +1,11 @@
+= form_with model: @order do |f|
+  .products  
+    %h2 Produtos
+    #items
+      = f.fields_for :items do |item|
+        = render 'item_fields', f: item 
+    .links  
+      = link_to_add_association 'Adicionar produto', f, :items
+  
+  = button_tag 'Criar venda', type: 'submit', class: 'button1'
+  -# = f.submit  "Criar venda", class: "button1"

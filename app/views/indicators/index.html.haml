@@ -1,0 +1,9 @@
+.indicators
+  %h1 Indicadores
+  .row
+    .vendas.col-sm-5
+      %h2 Vendas
+      %h2= number_to_currency(Order.all.sum(:total_value), unit: "R$ ", delimiter: ".", separator: ",")
+    .despesas.col-sm-5
+      %h2 Despesas
+      %h2 R$ 0,00

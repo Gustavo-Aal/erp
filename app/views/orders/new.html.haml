@@ -1,0 +1,5 @@
+.order_new
+  %h1 Nova venda
+  = render "form", order: @order
+  %button.button1#voltar{:onclick => "location.href ='/orders';"}
+    %strong Voltar

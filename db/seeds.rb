@@ -7,34 +7,39 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-# 50.times do |n|
-#     car = Product.new({
-#         name: Faker::Vehicle.make_and_model,
-#         description: Faker::Lorem.sentence,
-#         quantity: Faker::Number.number(digits: 2),
-#         value: Faker::Number.decimal(l_digits: 6)
-#     })
+50.times do |n|
 
-#     car.save
-# end
+    params = {
+        name: Faker::Vehicle.make_and_model,
+        description: Faker::Lorem.sentence,
+        quantity: Faker::Number.number(digits: 2),
+        value: Faker::Number.decimal(l_digits: 6)
+    }
 
-# 5.times do |n|
-#     id = Faker::Number.within(range: 1..50)
-#     p id
+    puts params
 
-#     sale = Sale.create(
-#         product_id: id,
-#         quantity: Faker::Number.within(range: 1..5)
-#     )
-#     #p sale
-# end
+    car = Product.new params
 
-sale = Sale.all
+    car.save
+end
 
-sale.each do |s|
+20.times do |n|
+    products = []
+    total_value = 0.0
 
-    s.total_value = s.product.value * s.quantity
+    Faker::Number.within(range: 1..5).times do
+        item = { 
+            product: Product.all.sample,
+            quantity: Faker::Number.within(range: 1..5)
+        }
+        products << item
 
-    s.save
+        total_value += item[:product].value * item[:quantity]
+    end
 
+
+    order = Order.create(
+        items_attributes: products,
+        total_value: total_value
+    )
 end

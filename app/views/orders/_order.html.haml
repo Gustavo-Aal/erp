@@ -1,0 +1,45 @@
+.sale.row
+  .pedido
+    %h3
+      \# #{order.id}
+    %h3
+      = number_to_currency(order.total_value, unit: "R$ ", separator: ",", delimiter: ".")
+  .info
+    %table
+      %tr.item 
+        %th Produto
+        %th Quantidade
+        %th Preço Unit.
+        %th Total        
+      - order.items.each do |item|
+        %tr.item
+          %td
+            = item.product.name
+          %td
+            = item.quantity 
+          %td
+            = number_to_currency(item.product.value, unit: "R$ ", separator: ",", delimiter: ".")
+          %td
+            = number_to_currency(item.product.value * item.quantity, unit: "R$ ", separator: ",", delimiter: ".")
+        
+
+    -# .item
+    -#   %p 
+    -#     %strong Produto
+    -#   %p 
+    -#     %strong Quantidade
+    -#   %p 
+    -#     %strong Preço Unit.
+    -#   %p 
+    -#     %strong Total
+    -# - order.items.each do |item|
+    -#   .item
+    -#     %p 
+    -#       #{item.product.name} :
+    -#     %p 
+    -#       %strong 
+    -#         = item.quantity 
+    -#     %p
+    -#       = number_to_currency(item.product.value, unit: "R$ ", separator: ",", delimiter: ".")
+    -#     %p
+    -#       \= #{number_to_currency(item.product.value * item.quantity, unit: "R$ ", separator: ",", delimiter: ".")}

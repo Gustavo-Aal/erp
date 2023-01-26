@@ -1,0 +1,9 @@
+.orders_index
+  .header
+    %h1 Vendas
+    %button.button1{:onclick => "location.href ='#{new_order_path}'"}
+      %strong Nova venda
+    %div
+      - @orders.each do |order|
+        %a{:href => "orders/#{order.id}", :id => "#{dom_id order}"}
+          = render order

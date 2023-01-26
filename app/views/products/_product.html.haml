@@ -1,0 +1,13 @@
+%a.product{:href => "products/#{product.id}", :id => "#{dom_id product}"}
+  .image
+    %img{:alt => "", :src => "/image.png"}/
+  .namePrice
+    %h3= product.name
+  %p#value= number_to_currency(product.value, unit: "R$ ", delimiter: ".", separator: ",")
+  %p Quantidade: #{product.quantity}
+
+  %p= product.description
+
+  %p Pedidos: #{}
+
+  %p Unidades vendidas: #{product.orders.sum(:quantity)}

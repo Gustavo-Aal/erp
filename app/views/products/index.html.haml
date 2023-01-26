@@ -1,0 +1,8 @@
+.products_page
+  .header
+    %h1 Produtos
+    %button.button1{:onclick => "location.href ='#{new_product_path}'"}
+      %strong Novo produto
+  .products
+    - @products.each do |product|
+      = render product
