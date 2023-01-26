@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
-    2.times {@order.items.build}
+    @order.items.build
   end
 
   # GET /orders/1/edit
@@ -23,6 +23,14 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
+
+    total_value = 0
+
+    @order.items.each do |item|
+      total_value += item.product.value * item.quantity
+    end
+
+    @order.total_value = total_value
 
     respond_to do |format|
       if @order.save
