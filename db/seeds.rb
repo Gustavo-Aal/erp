@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+user = User.second
+
 50.times do |n|
 
     params = {
@@ -18,9 +20,7 @@ require 'faker'
 
     puts params
 
-    car = Product.new params
-
-    car.save
+    user.products.create params
 end
 
 20.times do |n|
@@ -38,7 +38,7 @@ end
     end
 
 
-    order = Order.create(
+    user.orders.create(
         items_attributes: products,
         total_value: total_value
     )

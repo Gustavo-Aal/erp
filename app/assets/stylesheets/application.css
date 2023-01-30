@@ -23,7 +23,8 @@
  }
 body {
     background-color: var(--bg);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Flow Circular', cursive; */
     margin: 0;
     padding: 0;
     border: 0;
@@ -46,6 +47,57 @@ a:hover {
 .row {
     margin: 0;
     padding: 0;
+}
+
+.devise_page{
+    /* position: fixed; */
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #ffffff38;
+    /* background-color: #a7adc579; */
+}
+.devise_image{
+    overflow: hidden;
+    position: 100%;
+    padding: 0;
+    height: 100vh;
+    /* background-image: url('/rocket2.png'); */
+}
+
+.devise_image::before{
+    width: 100%;
+    height: 100%;
+}
+
+.devise_image img{
+    position: fixed;
+}
+
+.devise_page .devise{
+    background-color: var(--main);
+    padding: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    opacity: 150%;
+}
+
+.devise .field{
+    padding: 15px;
+}
+
+.devise input{
+    border-radius: 15px;
+    padding: 10px;
+    transition-duration: .3s;
+}
+.devise .button1:hover{
+    background-color: #F57A00;
+}
+
+.devise a{
+    color: white;
 }
 
 /* #region  SIDE MENU */
@@ -96,6 +148,38 @@ a:hover {
     color: rgb(255, 230, 0);
 }
 
+.login_dd{
+    position: fixed;
+    /*top: 10px;
+    right: -500px; */
+    right: 10;
+    top: 10px;
+    z-index: 10;
+    text-align: right;
+}
+
+.login_dd .button{
+    /* font-size: 12px; */
+    padding: 10px;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.login_dd .button1:focus {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid var(--bg);
+    box-shadow: 4px 5px 17px -4px var(--bg);
+    z-index: 10;
+    margin: 10px 0;
+}
+
+.login_dd .button1:focus::before {
+    width: 250%;
+}
+
 /* #endregion */
 
 .page {
@@ -127,6 +211,7 @@ a:hover {
 }
 
 .indicators .row {
+    
     display: flex;
     justify-content: space-around;
 }
@@ -151,6 +236,99 @@ a:hover {
     display: flex;
     justify-content: space-around;
     vertical-align: middle;
+}
+
+.indicators .card {
+    --primary-clr: green;
+    --dot-clr: #BBC0FF;
+    --play: darkgreen;
+    width: 500px;
+    height: 170px;
+    border-radius: 10px;
+    border: none;
+}
+
+.indicators .card {
+    color: #fff;
+    display: grid;
+    cursor: pointer;
+    grid-template-rows: 50px 1fr;
+}
+
+.indicators .card:hover .img-section {
+transform: translateY(0.5em);
+}
+
+.indicators .card-desc {
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    top: -30px;
+    display: grid;
+    gap: 10px;
+    background-color: var(--primary-clr);
+}
+.card .vendas {
+    background-color: var(--primary-clr);
+}
+.card .despesas {
+    background-color: red;
+}
+
+.indicators .card-time {
+font-size: 1.7em;
+font-weight: 500;
+}
+
+.img-section {
+    transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img-section.vendas {    
+    background-color: var(--play);
+}
+.img-section.despesas {
+    background-color: darkred;
+}
+
+.indicators .card-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background-color: rgba(0,255,0,0);
+}
+
+.indicators .card-title {
+    flex: 1;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.indicators .card-menu {
+display: flex;
+gap: 4px;
+margin-inline: auto;
+}
+
+.indicators .card svg {
+float: right;
+max-width: 100%;
+max-height: 100%;
+}
+
+.indicators .card .dot {
+width: 5px;
+height: 5px;
+border-radius: 50%;
+background: var(--dot-clr);
+}
+
+.indicators .card .recent {
+line-height: 0;
+font-size: 0.8em;
 }
 
 /* #endregion */
@@ -340,6 +518,10 @@ a:hover {
 
 .sale .info table{
     width: 100%;
+    table-layout: fixed;
+}
+.sale .info td{ 
+    overflow: hidden;
 }
 
 .info .item{
@@ -348,8 +530,6 @@ a:hover {
 }
 
 /* #endregion */
-
-
 
 /* #region ORDER NEW */
 

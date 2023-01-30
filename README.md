@@ -12,6 +12,9 @@ Essa aplicação (ainda sem nome) tem o objetivo de ser um sistema completo para
 
 ## Gems
 * Faker: para alimentar banco de dados
-* Cocoon: para formulários
+* Cocoon: formulários
+* CanCanCan: permissões
 * HAML: para views
 * HTML2HALM: para converter ERB em HAML
+* Devise: usuários
+* Letter-opener
